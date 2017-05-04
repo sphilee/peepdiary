@@ -1,0 +1,24 @@
+{% extends "list/head.html" %}
+{% load socialaccount %}
+{% block list_script %}
+    <script src="/static/js/list/jquery-ui.custom.min.js"></script>
+    <script src="/static/js/list/fullcalendar.js"></script>
+    <script src="/static/js/list/calendar.js"></script>
+{% endblock %}
+{% block list_style %}
+    <link rel="stylesheet" type="text/css" href="/static/css/list/fullcalendar.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/list/fullcalendar.print.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/list/calendar.css">
+{% endblock %}
+{% block list_contents %}
+    <div id='calendar'></div>
+    <div class="div_calendar_body">
+    <p id="date" class="p_calendar_title"></p>
+    </div>
+    <div class="panel panel-primary">
+    <div class="panel-heading">
+    <h3 class="panel-title">panel-title</h3>
+    </div>
+    <div class="panel-body">hello</div>
+    </div>
+{% endblock %}

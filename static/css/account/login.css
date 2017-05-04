@@ -1,0 +1,17 @@
+body{
+    background-color: #78B7B9;
+}
+
+#contents {
+    background-image: url(/static/img/account/bg.png);
+    background-size:100% auto;
+    background-repeat: no-repeat;
+}
+
+#logo{
+    position: absolute;
+    width:50%;
+    left:25%;
+    margin-left:5px;
+    top:20%;
+}

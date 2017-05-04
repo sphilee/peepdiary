@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% load socialaccount %}
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="/static/css/user/signup.css">
+{% endblock %}
+{% block contents %}
+    <form role="form" id="form_contents" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="privacy_info_box">
+            <b>수집하는 개인정보 항목</b><br>
+            회사는 회원가입, 상담, 서비스 신청 등을 위해 아래와 같은 개인정보를 수집하고 있습니다.<br>
+            - 수집항목 : 이름, 로그인ID, 비밀번호, 비밀번호 질문과 답변, 자택 전화번호, 자택 주소, 휴대전화번호, 이메일, 직업, 회사전화번호, 취미, 법정대리인정보, 신용카드 정보, 은행계좌 정보, 서비스 이용기록, 접속 로그, 쿠키, 접속 IP 정보, 결제기록, 필명, 자기소개<br>
+            - 개인정보 수집방법 : 홈페이지(회원가입), 경품 행사 응모
+        </div>
+
+        <div class="col-lg-12" align="center">
+            <label class="checkbox-inline">
+                <input type="checkbox" id="privacy_agree" name="privacy_agree" value="Y" required=""> 개인정보취급방침에 대한 내용을 모두 확인하였으며 이에 동의합니다.
+            </label>
+        </div>
+
+
+        <div class="form-group">
+            <label for="full_name">이름</label>
+            <input type="text" class="form-control" id="full_name" name="full_name" placeholder="이름" required>
+        </div>
+        <div class="form-group">
+            <label for="full_name">이름</label>
+            <div>
+                <label class="radio-inline"><input type="radio" name="gender" value="0">남</label>
+                <label class="radio-inline"><input type="radio" name="gender" value="1" checked>여</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="full_name">생년원일</label>
+            <input type="date" class="form-control" id="birth" name="birth" placeholder="1990-01-01" value="1990-01-01" required>
+        </div>
+
+        <button type="submit" class="btn btn-default">완료</button>
+    </form>
+{% endblock %}
+{% block script %}
+    <script src="/static/js/user/signup.js"></script>
+    <script>
+        $("#birth").change(function(){
+            console.log($(this).val());
+        })
+    </script>
+{% endblock %}

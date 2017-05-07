@@ -6,3 +6,13 @@
     border-radius: 6px;
     box-shadow: 0 1px 2px #C3C3C3;
 }
+.modal-dialog {
+   position:fixed;
+   top:auto;
+   right:0;
+   left:0;
+   bottom:0;
+}
+.diaryName {
+    font-weight: bold;
+}

@@ -67,9 +67,24 @@ $(document).ready(function() {
         allDaySlot: false,
         selectHelper: true,
         select: function(start, end, allDay) {
-            $('#date').text(start.getFullYear()+"/"+(start.getMonth()+1)+"/"+start.getDate());
-            $('#message').text(end);
-            //alert(start);
+            // Get the modal
+            var subDate = Math.ceil((start.getTime() - date.getTime())/86400000);
+            var subDateName;
+            var dayNames = ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'];
+            if (subDate < -1)
+                subDateName = Math.abs(subDate) + "일 전";
+            else if (subDate == -1)
+                subDateName = "어제";
+            else if (subDate == 1)
+                subDateName = "내일";
+            else if (subDate == 0)
+                subDateName = "오늘";
+            else
+                subDateName = subDate + "일 후";
+
+            $('#date').text(start.getFullYear()+"."+(start.getMonth()+1)+"."+start.getDate() +" "+dayNames[start.getDay()] + " / " +subDateName);
+            $('#date').css('color', 'rgb(209, 58, 111)');
+            $('#myModal').modal("show");
         },
         droppable: true, // this allows things to be dropped onto the calendar !!!
         drop: function(date, allDay) { // this function is called when something is dropped

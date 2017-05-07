@@ -397,14 +397,15 @@ table.fc-border-separate {
 	
 .fc-border-separate th.fc-last,
 .fc-border-separate td.fc-last {
+	color: blue;
 	border-right-width: 1px;
 	}
-	
 
 .fc-border-separate tr.fc-last td {
 	
 }
 .fc-border-separate .fc-week .fc-first{
+	color: red;
     border-left: 0;
 }
 .fc-border-separate .fc-week .fc-last{
@@ -641,8 +642,12 @@ table.fc-header{
     padding: 6px;
     text-align: center;
 }
-.fc-sun, .fc-sat{
+.fc-sat{
     color: #b8b8b8;
+}
+
+.fc-sun{
+	color:red;
 }
 
 .fc-week .fc-day:hover .fc-day-number{

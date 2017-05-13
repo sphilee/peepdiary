@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% load socialaccount %}
+{% block script %}
+    {% block list_script %}{% endblock %}
+{% endblock %}
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="/static/css/list/head.css">
+    {% block list_style %}{% endblock %}
+{% endblock %}
+{% block contents %}
+    <ul class="ul_list_tab">
+        <li>달력</li>
+    </ul>
+    {% block list_contents %}{% endblock %}
+{% endblock %}

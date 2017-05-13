@@ -27,3 +27,10 @@ p, h1, span, table, tr, td, div, ul, li, ol, img {
     max-width: 740px;
     outline: 1px solid RGBA(0, 0, 0, 0.05);
 }
+
+.div_list_head {
+    width:100%;
+    line-height: 60px;
+    background-color:#d0d0d0;
+    padding:0 10px;
+}

@@ -16,3 +16,33 @@
 .diaryName {
     font-weight: bold;
 }
+
+.p_calendar_title{
+    color:rgb(209, 58, 111);
+}
+
+.div_modal_list_letter{
+    border-bottom:1px solid #eee;
+    height: 80px;
+}
+
+.div_modal_list_letter:hover{
+    background-color:#f0f0f0;
+}
+
+.div_list_letter_pic{
+    width:60px;
+    height:60px;
+    float:left;
+    margin: 10px;
+}
+
+.p_letter_head {
+    text-align: left;
+    font-weight:700;
+    padding-top: 10px;
+}
+
+.p_letter_body{
+    text-align:left;
+}

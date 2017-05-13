@@ -4,6 +4,8 @@
     <script src="/static/js/list/jquery-ui.custom.min.js"></script>
     <script src="/static/js/list/fullcalendar.js"></script>
     <script src="/static/js/list/calendar.js"></script>
+    <script src="/static/js/list/gcal.min.js"></script>
+    <script src="/static/js/list/moment.min.js"></script>
 {% endblock %}
 {% block list_style %}
     <link rel="stylesheet" type="text/css" href="/static/css/list/fullcalendar.css">
@@ -19,12 +21,15 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <p style="text-align:center" id="date" class="p_calendar_title"></p>
+                    <p style="text-align:center" id="p_modal_date" class="p_calendar_title"></p>
                 </div>
                 <div class="modal-body" style="text-align:center">
-                    <div class="panel panel-default">
-                        <p class="diaryName">이관형</p>
-                        <p class="diaryContent">안녕하세요</p>
+                    <div class="div_modal_list_letter">
+                        <img src="/static/img" class="div_list_letter_pic">
+                        <div class="div_list_letter_body">
+                            <p class="p_letter_head">name</p>
+                            <p class="p_letter_body">contents</p>
+                        </div>
                     </div>
                 </div>
             </div>

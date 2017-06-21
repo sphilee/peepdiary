@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"/>
+    <title>Peep Diary</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/xeicon/2/xeicon.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/layout.css">
+</head>
+<body onload="loginWithKakao()">
+<div id="wrap">
+    <div id="container">
+        <i class="xi-spinner-1 xi-spin i_loading"></i>
+    </div>
+</div>
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+<script type='text/javascript'>
+    //<![CDATA[
+    // 사용할 앱의 JavaScript 키를 설정해 주세요.
+    Kakao.init('b3914c2a1581d7c886f4ae6a14970e25');
+    function loginWithKakao() {
+        // 로그인 창을 띄웁니다.
+        Kakao.Auth.login({
+            success: function(authObj) {
+                getget();
+            },
+            fail: function(err) {
+                alert(JSON.stringify(err));
+            }
+        });
+    };
+    //]]>
+
+    function getget(){
+        Kakao.API.request({
+            url: '/v1/user/me',
+            success: function(res) {
+                alert(JSON.stringify(res));
+            },
+            fail: function(error) {
+                alert(JSON.stringify(error));
+            }
+        });
+    }
+</script>
+</body>
+</html>

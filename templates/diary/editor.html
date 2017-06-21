@@ -1,0 +1,54 @@
+<style>
+    #input_editor_name {width: 30%;
+        caret-color: red;}
+    #span_editor_today {text-align: right;}
+    #input_editor_content {
+        caret-color: red;
+    }
+</style>
+<form>
+    <span >To. <input type="text" id="input_editor_name" name="name" placeholder="name"> <input type="date" id ="span_editor_today" class ="pull-right"></span >
+    <div class="form-group">
+        <textarea class="form-control" id="input_editor_content" placeholder="content"></textarea>
+    </div>
+</form>
+<script>
+    (function printNow() {
+        var today = new Date();
+
+        var dayNames = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
+        var day = dayNames[today.getDay()];
+
+        var year   = today.getFullYear(),
+            month  = today.getMonth() + 1,
+            date   = today.getDate(),
+            hour   = today.getHours(),
+            minute = today.getMinutes(),
+            second = today.getSeconds();
+        ampm   = hour >= 12 ? 'PM' : 'AM';
+
+        month = month <10 ? '0'+ month : month;
+
+        // 12시간제로 변경
+        hour = hour % 12;
+        hour = hour ? hour : 12; // the hour '0' should be '12'
+
+        // 10미만인 분과 초를 2자리로 변경
+        minute = minute < 10 ? '0' + minute : minute;
+        second = second < 10 ? '0' + second : second;
+
+        var now =  year +"-" + month +"-" + date;
+
+        var divs = document.getElementsByClassName("div_list_head");
+
+        var heightA = document.getElementById("contents").clientHeight -  divs[0].clientHeight - document.getElementById("input_editor_name").clientHeight-21;
+
+
+
+        document.getElementById("input_editor_content").style.height = heightA +'px';
+
+        document.getElementById("span_editor_today").value = now;
+
+    }());
+
+</script>

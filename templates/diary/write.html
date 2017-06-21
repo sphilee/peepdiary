@@ -1,0 +1,11 @@
+{% extends "diary/head.html" %}
+{% load socialaccount %}
+{% block list_script %}
+    <script src="/static/js/diary/write.js"></script>
+{% endblock %}
+{% block list_style %}
+    <link rel="stylesheet" type="text/css" href="/static/css/diary/write.css">
+{% endblock %}
+{% block list_contents %}
+    {% include "diary/editor.html" %}
+{% endblock %}
